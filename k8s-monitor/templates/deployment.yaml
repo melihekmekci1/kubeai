@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8smonitor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8smonitor
+  template:
+    metadata:
+      labels:
+        app: k8smonitor
+    spec:
+      containers:
+      - name: k8smonitor
+        image: xxxxxx/xxxxxx:xx
+        ports:
+        - containerPort: 80

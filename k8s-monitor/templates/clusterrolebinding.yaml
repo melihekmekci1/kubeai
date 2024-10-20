@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: cluster-admin-access-binding
+subjects:
+- kind: ServiceAccount
+  name: default  # This is the service account used by the k8smonitor pod
+  namespace: default
+roleRef:
+  kind: ClusterRole
+  name: cluster-admin-access  # This is the ClusterRole created above
+  apiGroup: rbac.authorization.k8s.io
